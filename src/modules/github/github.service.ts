@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { IIssuesList } from 'src/interfaces/github/issues.interface';
-import { GITHUB_BASEURL, GITHUB_USERNAME, GITHUB_TOKEN } from 'config';
+import { GITHUB_BASEURL, GITHUB_USERNAME, GITHUB_TOKEN } from '~/config';
 
 @Injectable()
 export class GithubService {
