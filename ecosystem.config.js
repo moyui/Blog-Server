@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'blog-server',
       max_memory_restart: '1G',
-      script: 'node dist/main.js',
+      script: 'node dist/src/main.js',
       instances: 1,
       cron_restart: '0 0 * * *',
       env: {
