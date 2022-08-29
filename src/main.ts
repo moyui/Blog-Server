@@ -13,10 +13,13 @@ import fastifyMultipart from '@fastify/multipart';
 
 import { AppModule } from './app.module';
 
+const PORT = process.env.NODE_ENV === 'production' ? 7524 : 3000;
+
 async function bootstrap() {
   const adapter = new FastifyAdapter({
     logger: true,
   });
+
   // adapter.register(helmet, {
   //   contentSecurityPolicy: false, // 在使用fastify-swagger和helmet时有CSP冲突
   // });
@@ -50,6 +53,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/api/document', app, document);
 
-  await app.listen(3000, '0.0.0.0');
+  await app.listen(PORT, '0.0.0.0');
 }
 bootstrap();
